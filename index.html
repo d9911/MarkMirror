@@ -1,37 +1,26 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <title>MarkMirror Mobile - Markdown Editor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>MarkMirror — Markdown-редактор с живым превью</title>
 
     <!-- PWA Meta Tags -->
-    <meta name="description" content="Мощный Markdown-редактор с двухпанельным интерфейсом и живым превью" />
+    <meta name="description" content="Редактируйте Markdown в двухпанельном интерфейсе с безопасным живым превью и синхронной прокруткой." />
     <meta name="keywords" content="markdown, editor, preview, pwa, mobile, text, writing" />
     <meta name="author" content="MarkMirror Team" />
 
     <!-- PWA Manifest -->
-    <link rel="manifest" href="/manifest.json" />
 
     <!-- Theme Colors -->
-    <meta name="theme-color" content="#007bff" />
+    <meta name="theme-color" content="#080b12" />
     <meta name="msapplication-TileColor" content="#007bff" />
     <meta name="msapplication-navbutton-color" content="#007bff" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
 
     <!-- Apple Touch Icons -->
-    <link rel="apple-touch-icon" sizes="72x72" href="src/img/icon-72x72.png" />
-    <link rel="apple-touch-icon" sizes="96x96" href="src/img/icon-96x96.png" />
-    <link rel="apple-touch-icon" sizes="128x128" href="src/img/icon-128x128.png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="src/img/icon-144x144.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="src/img/icon-152x152.png" />
-    <link rel="apple-touch-icon" sizes="192x192" href="src/img/icon-192x192.png" />
-    <link rel="apple-touch-icon" sizes="384x384" href="src/img/icon-384x384.png" />
-    <link rel="apple-touch-icon" sizes="512x512" href="src/img/icon-512x512.png" />
 
     <!-- Standard Favicons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="src/img/icon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="src/img/icon-16x16.png" />
     <link rel="shortcut icon" href="src/img/favicon-old.ico" />
 
     <!-- Apple Web App -->
@@ -47,12 +36,12 @@
     <script type="importmap">
       {
         "imports": {
-          "@codemirror/state": "https://cdn.skypack.dev/@codemirror/state",
-          "@codemirror/view": "https://cdn.skypack.dev/@codemirror/view",
-          "@codemirror/basic-setup": "https://cdn.skypack.dev/@codemirror/basic-setup",
-          "@codemirror/lang-markdown": "https://cdn.skypack.dev/@codemirror/lang-markdown",
-          "@codemirror/theme-one-dark": "https://cdn.skypack.dev/@codemirror/theme-one-dark",
-          "@codemirror/autocomplete": "https://cdn.skypack.dev/@codemirror/autocomplete"
+          "codemirror": "https://esm.sh/codemirror@6.0.2",
+          "@codemirror/state": "https://esm.sh/@codemirror/state@6.7.1",
+          "@codemirror/view": "https://esm.sh/@codemirror/view@6.43.9",
+          "@codemirror/lang-markdown": "https://esm.sh/@codemirror/lang-markdown@6.5.2",
+          "@codemirror/theme-one-dark": "https://esm.sh/@codemirror/theme-one-dark@6.1.3",
+          "@codemirror/autocomplete": "https://esm.sh/@codemirror/autocomplete@6.20.3"
         }
       }
     </script>
@@ -73,8 +62,42 @@
 
     <!-- Editor Actions Module -->
     <link rel="stylesheet" href="src/style/editor-actions.css" />
-  </head>
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="color-scheme" content="dark" />
+  <link rel="canonical" href="https://mark-mirror.d9911.org/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="MarkMirror — Markdown-редактор с живым превью" />
+  <meta property="og:description" content="Редактируйте Markdown в двухпанельном интерфейсе с безопасным живым превью и синхронной прокруткой." />
+  <meta property="og:url" content="https://mark-mirror.d9911.org/" />
+  <meta property="og:image" content="https://mark-mirror.d9911.org/src/img/icon-512x512.png" />
+  <meta property="og:image:alt" content="MarkMirror logo" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="MarkMirror — Markdown-редактор с живым превью" />
+  <meta name="twitter:description" content="Редактируйте Markdown в двухпанельном интерфейсе с безопасным живым превью и синхронной прокруткой." />
+  <meta name="twitter:image" content="https://mark-mirror.d9911.org/src/img/icon-512x512.png" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="src/img/icon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="192x192" href="src/img/icon-192x192.png" />
+  <link rel="manifest" href="manifest.json" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "MarkMirror",
+      "url": "https://mark-mirror.d9911.org/",
+      "description": "Редактируйте Markdown в двухпанельном интерфейсе с безопасным живым превью и синхронной прокруткой.",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "inLanguage": [
+        "ru"
+      ],
+      "isAccessibleForFree": true
+    }
+  </script>
+</head>
   <body>
+    <a class="skip-link" href="#main-content">Перейти к редактору</a>
     <!-- Main Container -->
     <div id="app" class="app">
       <!-- Header with controls -->
@@ -93,19 +116,19 @@
         <div class="header-right">
           <div class="controls">
             <!-- Theme toggle -->
-            <button id="theme-toggle" class="btn btn-icon" title="Переключить тему">🌙</button>
+            <button id="theme-toggle" class="btn btn-icon" title="Переключить тему" aria-label="Переключить тему">🌙</button>
 
             <!-- Settings toggle -->
-            <button id="settings-toggle" class="btn btn-icon" title="Настройки">⚙️</button>
+            <button id="settings-toggle" class="btn btn-icon" title="Настройки" aria-label="Открыть настройки">⚙️</button>
 
             <!-- Analytics toggle -->
-            <button id="analytics-toggle" class="btn btn-icon" title="Аналитика">📊</button>
+            <button id="analytics-toggle" class="btn btn-icon" title="Аналитика" aria-label="Открыть аналитику">📊</button>
 
             <!-- Search toggle -->
-            <button id="search-toggle" class="btn btn-icon" title="Поиск и замена (Ctrl+F)">🔍</button>
+            <button id="search-toggle" class="btn btn-icon" title="Поиск и замена (Ctrl+F)" aria-label="Открыть поиск и замену">🔍</button>
 
             <!-- Help toggle -->
-            <button id="help-toggle" class="btn btn-icon" title="Справка">❓</button>
+            <button id="help-toggle" class="btn btn-icon" title="Справка" aria-label="Открыть справку">❓</button>
           </div>
         </div>
       </header>
@@ -258,7 +281,7 @@
       </div>
 
       <!-- Main Content Area -->
-      <main class="main-content">
+      <main class="main-content" id="main-content" tabindex="-1">
         <!-- Mobile Tab Navigation (visible on small screens) -->
         <div class="mobile-tabs">
           <button class="tab-btn active" data-tab="editor">Редактор</button>
@@ -311,7 +334,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h3>Справка по Markdown</h3>
-            <button id="close-help" class="btn btn-icon">✕</button>
+            <button id="close-help" class="btn btn-icon" aria-label="Закрыть справку">✕</button>
           </div>
           <div class="modal-body">
             <div id="help-content" class="help-content">

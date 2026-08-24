@@ -1,91 +1,25 @@
 {
-  "name": "MarkMirror Mobile - Markdown Editor",
+  "name": "MarkMirror",
   "short_name": "MarkMirror",
-  "description": "Мощный Markdown-редактор с двухпанельным интерфейсом и живым превью",
+  "description": "Редактируйте Markdown в двухпанельном интерфейсе с безопасным живым превью и синхронной прокруткой.",
   "version": "2.1.0",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#007bff",
+  "background_color": "#080b12",
+  "theme_color": "#080b12",
   "orientation": "any",
   "scope": "/",
   "lang": "ru",
   "dir": "ltr",
-  
   "icons": [
-    {
-      "src": "src/img/icon-72x72.png",
-      "sizes": "72x72",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "src/img/icon-96x96.png",
-      "sizes": "96x96",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "src/img/icon-128x128.png",
-      "sizes": "128x128",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "src/img/icon-144x144.png",
-      "sizes": "144x144",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "src/img/icon-152x152.png",
-      "sizes": "152x152",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "src/img/icon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "src/img/icon-384x384.png",
-      "sizes": "384x384",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "src/img/icon-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    }
+    { "src": "src/img/icon-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "src/img/icon-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
   ],
-  
   "categories": [
     "productivity",
     "utilities",
     "education"
   ],
-  
-  "screenshots": [
-    {
-      "src": "screenshots/desktop-1.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "Главный интерфейс MarkMirror на десктопе"
-    },
-    {
-      "src": "screenshots/mobile-1.png",
-      "sizes": "390x844",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "Мобильный интерфейс MarkMirror"
-    }
-  ],
-  
   "shortcuts": [
     {
       "name": "Новый документ",
@@ -124,24 +58,25 @@
       ]
     }
   ],
-  
   "related_applications": [],
   "prefer_related_applications": false,
-  
   "edge_side_panel": {
     "preferred_width": 400
   },
-  
   "file_handlers": [
     {
       "action": "/",
       "accept": {
-        "text/markdown": [".md", ".markdown"],
-        "text/plain": [".txt"]
+        "text/markdown": [
+          ".md",
+          ".markdown"
+        ],
+        "text/plain": [
+          ".txt"
+        ]
       }
     }
   ],
-  
   "share_target": {
     "action": "/",
     "method": "GET",
@@ -151,7 +86,6 @@
       "url": "url"
     }
   },
-  
   "protocol_handlers": [
     {
       "protocol": "web+markdown",

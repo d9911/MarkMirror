@@ -53,7 +53,7 @@ export class Storage {
     // Get default settings
     getDefaultSettings() {
         return {
-            theme: 'auto', // 'light', 'dark', 'auto'
+            theme: 'dark', // 'light', 'dark', 'auto'
             autoComplete: true,
             syncScroll: true, // Enable by default for testing
             useExternalParser: false,

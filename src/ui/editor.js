@@ -1,13 +1,11 @@
 // CodeMirror 6 Editor integration for MarkMirror Mobile
 
-import { EditorView, basicSetup } from '@codemirror/basic-setup';
+import { basicSetup } from 'codemirror';
+import { EditorView, keymap } from '@codemirror/view';
 import { EditorState } from '@codemirror/state';
 import { markdown } from '@codemirror/lang-markdown';
 import { oneDark } from '@codemirror/theme-one-dark';
 import { autocompletion, completionKeymap } from '@codemirror/autocomplete';
-import { keymap } from '@codemirror/view';
-import { Decoration, DecorationSet } from '@codemirror/view';
-import { StateField, StateEffect } from '@codemirror/state';
 
 export class MarkdownEditor {
     constructor(container, options = {}) {

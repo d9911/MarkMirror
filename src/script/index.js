@@ -833,7 +833,7 @@ class MarkMirrorApp {
 
 ### 🔗 Ссылки и изображения
 [Ссылка на GitHub](https://github.com)
-![Пример изображения](https://via.placeholder.com/300x200)
+![Логотип MarkMirror](/src/img/icon-512x512.png)
 
 ### 📊 Таблицы
 | Заголовок 1 | Заголовок 2 | Заголовок 3 |
@@ -1072,7 +1072,7 @@ Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed 
 
       // Reset to default settings
       this.settings = {
-        theme: 'light',
+        theme: 'dark',
         editorType: 'codemirror',
         autoSave: true,
         syncScroll: true,
@@ -1094,7 +1094,7 @@ Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed 
       // Reset EditorActions settings
       if (window.EditorActions) {
         window.EditorActions.set({
-          theme: 'light',
+          theme: 'dark',
           actionBarVisible: true,
           highlightColor: '#ffeb3b'
         });
