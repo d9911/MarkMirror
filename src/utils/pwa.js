@@ -85,8 +85,8 @@ export class PWAManager {
             try {
                 console.log('🔧 PWA: Registering service worker...');
                 
-                const registration = await navigator.serviceWorker.register('/sw.js', {
-                    scope: '/'
+                const registration = await navigator.serviceWorker.register('./sw.js', {
+                    scope: './'
                 });
                 
                 this.serviceWorker = registration;

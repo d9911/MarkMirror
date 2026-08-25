@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
@@ -63,39 +63,37 @@
     <!-- Editor Actions Module -->
     <link rel="stylesheet" href="src/style/editor-actions.css" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
-  <meta name="color-scheme" content="dark" />
-  <link rel="canonical" href="https://mark-mirror.d9911.org/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="MarkMirror — Markdown-редактор с живым превью" />
-  <meta property="og:description" content="Редактируйте Markdown в двухпанельном интерфейсе с безопасным живым превью и синхронной прокруткой." />
-  <meta property="og:url" content="https://mark-mirror.d9911.org/" />
-  <meta property="og:image" content="https://mark-mirror.d9911.org/src/img/icon-512x512.png" />
-  <meta property="og:image:alt" content="MarkMirror logo" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="MarkMirror — Markdown-редактор с живым превью" />
-  <meta name="twitter:description" content="Редактируйте Markdown в двухпанельном интерфейсе с безопасным живым превью и синхронной прокруткой." />
-  <meta name="twitter:image" content="https://mark-mirror.d9911.org/src/img/icon-512x512.png" />
-  <link rel="icon" href="favicon.ico" sizes="any" />
-  <link rel="icon" type="image/png" sizes="32x32" href="src/img/icon-32x32.png" />
-  <link rel="apple-touch-icon" sizes="192x192" href="src/img/icon-192x192.png" />
-  <link rel="manifest" href="manifest.json" />
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "MarkMirror",
-      "url": "https://mark-mirror.d9911.org/",
-      "description": "Редактируйте Markdown в двухпанельном интерфейсе с безопасным живым превью и синхронной прокруткой.",
-      "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "Any",
-      "browserRequirements": "Requires JavaScript. Requires HTML5.",
-      "inLanguage": [
-        "ru"
-      ],
-      "isAccessibleForFree": true
-    }
-  </script>
-</head>
+    <meta name="color-scheme" content="dark" />
+    <link rel="canonical" href="https://mark-mirror.d9911.org/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="MarkMirror — Markdown-редактор с живым превью" />
+    <meta property="og:description" content="Редактируйте Markdown в двухпанельном интерфейсе с безопасным живым превью и синхронной прокруткой." />
+    <meta property="og:url" content="https://mark-mirror.d9911.org/" />
+    <meta property="og:image" content="https://mark-mirror.d9911.org/src/img/icon-512x512.png" />
+    <meta property="og:image:alt" content="MarkMirror logo" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="MarkMirror — Markdown-редактор с живым превью" />
+    <meta name="twitter:description" content="Редактируйте Markdown в двухпанельном интерфейсе с безопасным живым превью и синхронной прокруткой." />
+    <meta name="twitter:image" content="https://mark-mirror.d9911.org/src/img/icon-512x512.png" />
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="src/img/icon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="src/img/icon-192x192.png" />
+    <link rel="manifest" href="manifest.json" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "MarkMirror",
+        "url": "https://mark-mirror.d9911.org/",
+        "description": "Редактируйте Markdown в двухпанельном интерфейсе с безопасным живым превью и синхронной прокруткой.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": ["ru"],
+        "isAccessibleForFree": true
+      }
+    </script>
+  </head>
   <body>
     <a class="skip-link" href="#main-content">Перейти к редактору</a>
     <!-- Main Container -->
@@ -115,21 +113,38 @@
 
         <div class="header-right">
           <div class="controls">
+            <div class="language-menu">
+              <button
+                id="language-trigger"
+                class="btn language-trigger"
+                type="button"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+                aria-controls="language-options"
+              >
+                <span id="language-current">RU</span>
+                <svg class="language-chevron" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+                  <path
+                    d="M10.5832 6.00002L7.99657 8.58669L5.4099 6.00002C5.1499 5.74002 4.7299 5.74002 4.4699 6.00002C4.2099 6.26002 4.2099 6.68002 4.4699 6.94002L7.5299 10C7.7899 10.26 8.2099 10.26 8.4699 10L11.5299 6.94002C11.7899 6.68002 11.7899 6.26002 11.5299 6.00002C11.2699 5.74669 10.8432 5.74002 10.5832 6.00002Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+              <div id="language-options" class="language-options" role="listbox" hidden>
+                <button type="button" role="option" data-language="ru"><span>Русский</span><span>RU</span></button>
+                <button type="button" role="option" data-language="en"><span>English</span><span>EN</span></button>
+                <button type="button" role="option" data-language="es"><span>Español</span><span>ES</span></button>
+              </div>
+            </div>
             <!-- Theme toggle -->
             <button id="theme-toggle" class="btn btn-icon" title="Переключить тему" aria-label="Переключить тему">🌙</button>
-
-            <!-- Settings toggle -->
-            <button id="settings-toggle" class="btn btn-icon" title="Настройки" aria-label="Открыть настройки">⚙️</button>
-
-            <!-- Analytics toggle -->
-            <button id="analytics-toggle" class="btn btn-icon" title="Аналитика" aria-label="Открыть аналитику">📊</button>
-
-            <!-- Search toggle -->
-            <button id="search-toggle" class="btn btn-icon" title="Поиск и замена (Ctrl+F)" aria-label="Открыть поиск и замену">🔍</button>
-
-            <!-- Help toggle -->
-            <button id="help-toggle" class="btn btn-icon" title="Справка" aria-label="Открыть справку">❓</button>
           </div>
+        </div>
+        <div class="utility-controls" aria-label="Инструменты редактора">
+          <button id="settings-toggle" class="btn btn-icon" title="Настройки" aria-label="Открыть настройки">⚙️</button>
+          <button id="analytics-toggle" class="btn btn-icon" title="Аналитика" aria-label="Открыть аналитику">📊</button>
+          <button id="search-toggle" class="btn btn-icon" title="Поиск и замена (Ctrl+F)" aria-label="Открыть поиск и замену">🔍</button>
+          <button id="help-toggle" class="btn btn-icon" title="Справка" aria-label="Открыть справку">❓</button>
         </div>
       </header>
 
@@ -192,9 +207,7 @@
           </div>
 
           <div class="setting-group">
-            <button id="reset-settings" class="btn btn-danger" title="Сбросить все настройки к значениям по умолчанию">
-              🔄 Сбросить настройки
-            </button>
+            <button id="reset-settings" class="btn btn-danger" title="Сбросить все настройки к значениям по умолчанию">🔄 Сбросить настройки</button>
           </div>
         </div>
       </div>
@@ -353,6 +366,7 @@
 
     <!-- Scripts -->
     <script defer src="src/utils/editor-actions.js"></script>
+    <script defer src="src/script/language.js"></script>
     <script defer type="module" src="src/script/index.js"></script>
   </body>
 </html>

@@ -2,7 +2,7 @@
 
 import { basicSetup } from 'codemirror';
 import { EditorView, keymap } from '@codemirror/view';
-import { EditorState } from '@codemirror/state';
+import { Compartment, EditorState } from '@codemirror/state';
 import { markdown } from '@codemirror/lang-markdown';
 import { oneDark } from '@codemirror/theme-one-dark';
 import { autocompletion, completionKeymap } from '@codemirror/autocomplete';
@@ -19,6 +19,7 @@ export class MarkdownEditor {
         };
         
         this.view = null;
+        this.themeCompartment = new Compartment();
         this.completions = this.createMarkdownCompletions();
         this.init();
     }
@@ -28,6 +29,7 @@ export class MarkdownEditor {
         const extensions = [
             basicSetup,
             markdown(),
+            this.themeCompartment.of(this.getThemeExtension(this.options.theme)),
             keymap.of(completionKeymap),
             EditorView.updateListener.of((update) => {
                 if (update.docChanged && this.options.onChange) {
@@ -43,11 +45,6 @@ export class MarkdownEditor {
                 }
             })
         ];
-
-        // Add theme
-        if (this.options.theme === 'dark') {
-            extensions.push(oneDark);
-        }
 
         // Add autocompletion if enabled
         if (this.options.autoComplete) {
@@ -180,8 +177,15 @@ export class MarkdownEditor {
     // Update theme
     updateTheme(theme) {
         this.options.theme = theme;
-        // Note: In a real implementation, you'd need to reconfigure the editor
-        // For now, we'll just store the preference
+        if (this.view) {
+            this.view.dispatch({
+                effects: this.themeCompartment.reconfigure(this.getThemeExtension(theme))
+            });
+        }
+    }
+
+    getThemeExtension(theme) {
+        return theme === 'dark' ? oneDark : [];
     }
 
     // Toggle autocompletion

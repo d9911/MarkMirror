@@ -94,7 +94,9 @@ class MarkMirrorApp {
     // Update theme toggle button
     const themeToggle = document.getElementById('theme-toggle');
     if (themeToggle) {
-      themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+      themeToggle.innerHTML = theme === 'dark'
+        ? '<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4V2m0 20v-2M4 12H2m20 0h-2M5.64 5.64 4.22 4.22m15.56 15.56-1.42-1.42m0-12.72 1.42-1.42M4.22 19.78l1.42-1.42M17 12a5 5 0 1 1-10 0 5 5 0 0 1 10 0Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>'
+        : '<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.7 15.1A9 9 0 0 1 8.9 3.3 9 9 0 1 0 20.7 15.1Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>';
       themeToggle.title = theme === 'dark' ? 'Переключить на светлую тему' : 'Переключить на тёмную тему';
     }
   }
@@ -752,7 +754,9 @@ class MarkMirrorApp {
     const charCount = document.getElementById('char-count');
     if (charCount) {
       const count = content.length;
-      charCount.textContent = `${count} символов`;
+      const language = window.markMirrorI18n?.language || 'ru';
+      const unit = language === 'en' ? 'characters' : language === 'es' ? 'caracteres' : 'символов';
+      charCount.textContent = `${count} ${unit}`;
     }
 
     // Update preview
@@ -833,7 +837,7 @@ class MarkMirrorApp {
 
 ### 🔗 Ссылки и изображения
 [Ссылка на GitHub](https://github.com)
-![Логотип MarkMirror](/src/img/icon-512x512.png)
+![Логотип MarkMirror](src/img/icon-512x512.png)
 
 ### 📊 Таблицы
 | Заголовок 1 | Заголовок 2 | Заголовок 3 |

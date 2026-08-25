@@ -3,12 +3,12 @@
   "short_name": "MarkMirror",
   "description": "Редактируйте Markdown в двухпанельном интерфейсе с безопасным живым превью и синхронной прокруткой.",
   "version": "2.1.0",
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#080b12",
   "theme_color": "#080b12",
   "orientation": "any",
-  "scope": "/",
+  "scope": "./",
   "lang": "ru",
   "dir": "ltr",
   "icons": [
@@ -25,7 +25,7 @@
       "name": "Новый документ",
       "short_name": "Новый",
       "description": "Создать новый Markdown документ",
-      "url": "/?action=new",
+      "url": "./?action=new",
       "icons": [
         {
           "src": "src/img/icon-96x96.png",
@@ -37,7 +37,7 @@
       "name": "Импорт файла",
       "short_name": "Импорт",
       "description": "Импортировать .md файл",
-      "url": "/?action=import",
+      "url": "./?action=import",
       "icons": [
         {
           "src": "src/img/icon-96x96.png",
@@ -49,7 +49,7 @@
       "name": "Аналитика",
       "short_name": "Статистика",
       "description": "Просмотр статистики использования",
-      "url": "/?action=analytics",
+      "url": "./?action=analytics",
       "icons": [
         {
           "src": "src/img/icon-96x96.png",
@@ -65,7 +65,7 @@
   },
   "file_handlers": [
     {
-      "action": "/",
+      "action": "./",
       "accept": {
         "text/markdown": [
           ".md",
@@ -78,7 +78,7 @@
     }
   ],
   "share_target": {
-    "action": "/",
+    "action": "./",
     "method": "GET",
     "params": {
       "title": "title",
@@ -89,7 +89,7 @@
   "protocol_handlers": [
     {
       "protocol": "web+markdown",
-      "url": "/?markdown=%s"
+      "url": "./?markdown=%s"
     }
   ]
 }
