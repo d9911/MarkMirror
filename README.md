@@ -1,328 +1,50 @@
-# MarkMirror Mobile 🚀
+English | [Español](README.es.md) | [Русский](README.ru.md)
 
-**Мощный Markdown-редактор с двухпанельным интерфейсом для веб-браузера**
+# MarkMirror
 
-MarkMirror Mobile - это современное веб-приложение для редактирования Markdown с живым превью, поддержкой тем, синхронной прокруткой и множеством других функций.
+## Purpose
 
-![MarkMirror Mobile](https://via.placeholder.com/800x400/007bff/ffffff?text=MarkMirror+Mobile)
+MarkMirror is a browser-based Markdown editor with editing and preview panels.
 
-## ✨ Основные возможности
+## Web address
 
-### 🎯 Двухпанельный интерфейс
+<https://mark-mirror.d9911.org/>
 
-- **Левая панель**: Редактор с подсветкой синтаксиса Markdown
-- **Правая панель**: Живое превью с двумя секциями:
-  - Верхняя: Plain text (исходный текст)
-  - Нижняя: HTML-рендер Markdown
+## Verified capabilities
 
-### 📝 Редактор
+- Edit Markdown and update plain-text and HTML previews; the bundled parser supports headings, formatting, links, images, lists, tables, task lists, fenced code blocks, blockquotes, and inline HTML.
+- Dynamically load a CodeMirror editor and fall back to a simple editor if that import fails.
+- Import `.md` and `.txt` files, export the current content as Markdown or HTML, and clear the editor.
+- Provide settings for autocomplete, synchronized scrolling, parser selection, embedded export styles, Markdown highlighting, and preview zoom.
+- Provide search and replace controls, including regular-expression, case-sensitive, whole-word, and confirmation options, plus an analytics panel.
+- Save document content and settings in browser `localStorage`.
+- Include a web manifest; `PWAManager` registers `sw.js` and handles an install prompt when the browser provides one. The service worker caches same-origin static files. This describes the shipped implementation only; browser support and resource availability determine its behavior.
 
-- Подсветка синтаксиса Markdown
-- Автодополнение (включается/выключается)
-- Поддержка горячих клавиш
-- Автосохранение в localStorage
-- Импорт .md файлов с диска
+## Usage
 
-### 🔄 Превью
+1. Write Markdown in the editor or import a `.md`/`.txt` file.
+2. Read the preview and use the settings, search/replace, or analytics controls as needed.
+3. Export the document as `.md` or `.html` when required.
 
-- Живое обновление при вводе
-- Синхронная прокрутка (опционально)
-- Масштабирование (50%-200%)
-- Переключение между собственным и внешним парсером
+## Local development and build
 
-### 📋 Поддерживаемый Markdown
+The repository has no tracked package manifest, lockfile, or project-local build configuration. It is a static ES-module application: serve the repository through a local HTTP server when testing module loading or service-worker behavior. No project-local installation or build command is defined.
 
-- **CommonMark**: заголовки, параграфы, жирный/курсив текст
-- **Списки**: маркированные, нумерованные, вложенные
-- **Task-списки**: `- [ ]` и `- [x]`
-- **Блоки кода**: с указанием языка и подсветкой
-- **Таблицы**: полная поддержка
-- **Ссылки и изображения**
-- **Цитаты**
-- **Inline HTML**: безопасные теги
-- **Специальные элементы**: `<details>`, `<summary>`, `<kbd>`, `<mark>`
+## Structure
 
-### 🎨 Темы и интерфейс
+- `index.html` defines the interface, imports external browser libraries, and loads the application module.
+- `src/script/` initializes the application and language controls.
+- `src/ui/` provides editor, preview, analytics, and search/replace components; `src/utils/` provides parsing, storage, file, analytics, editor-action, and PWA helpers.
+- `manifest.json` defines the app manifest, `sw.js` contains the same-origin cache strategy, and `src/tests/` contains browser-oriented Markdown parser tests.
 
-- **Светлая/тёмная тема** с автоопределением системной темы
-- **Адаптивный дизайн** для мобильных устройств
-- **Мобильные вкладки** для переключения между редактором и превью
-- **Настраиваемый масштаб** превью
+## Technologies and runtime dependencies
 
-### 💾 Сохранение и экспорт
+The app uses browser HTML, CSS, JavaScript modules, `localStorage`, Web App Manifest, and Service Worker APIs. Its document loads CodeMirror 6 modules from esm.sh, Highlight.js 11.9.0 from cdnjs, and DOMPurify 3.0.5 plus Marked 9.1.6 from jsDelivr. No Node.js dependency configuration is tracked.
 
-- **Автосохранение** в localStorage
-- **Экспорт в .md** файл
-- **Экспорт в .html** с опцией встраивания стилей
-- **Импорт .md файлов**
+## License
 
-### 📱 PWA (Progressive Web App)
+Distribution and license terms are in [LICENSE](LICENSE), including the repository's additional project-specific terms.
 
-- **Установка как приложение** на любое устройство
-- **Офлайн работа** с полным функционалом
-- **Быстрый запуск** с рабочего стола/главного экрана
-- **Автоматические обновления** в фоне
-- **Ярлыки приложения** для быстрых действий
-- **Уведомления** об обновлениях
+## Author
 
-### ⚙️ Настройки
-
-- Включение/выключение автодополнения
-- Синхронная прокрутка между панелями
-- Переключение между собственным и внешним парсером (Marked.js)
-- Встраивание стилей при экспорте HTML
-- Масштаб превью
-
-## 🚀 Быстрый старт
-
-### 📱 Установка как PWA (рекомендуется)
-
-1. **Откройте приложение в браузере:**
-
-   ```
-   https://yourusername.github.io/MarkMirror/
-   ```
-
-2. **Установите приложение:**
-
-   - **Desktop**: Нажмите кнопку "📱 Установить приложение" или используйте меню браузера
-   - **Android**: Нажмите "Добавить на главный экран" в меню браузера
-   - **iOS**: Нажмите "Поделиться" → "На экран Домой"
-
-3. **Запускайте как обычное приложение:**
-   - Иконка появится на рабочем столе/главном экране
-   - Приложение откроется в полноэкранном режиме
-   - Работает офлайн после первой загрузки
-
-### Локальное использование
-
-1. **Клонируйте репозиторий:**
-
-   ```bash
-   git clone https://github.com/yourusername/MarkMirror.git
-   cd MarkMirror
-   ```
-
-2. **Откройте в браузере:**
-
-   ```bash
-   # Просто откройте index.html в любом современном браузере
-   open index.html  # macOS
-   start index.html # Windows
-   xdg-open index.html # Linux
-   ```
-
-3. **Или используйте локальный сервер:**
-
-   ```bash
-   # Python 3
-   python -m http.server 8000
-
-   # Node.js (если установлен http-server)
-   npx http-server
-
-   # Затем откройте http://localhost:8000
-   ```
-
-### Деплой на GitHub Pages
-
-1. **Форкните репозиторий** на GitHub
-
-2. **Включите GitHub Pages:**
-
-   - Перейдите в Settings → Pages
-   - Выберите Source: Deploy from a branch
-   - Выберите Branch: main / (root)
-   - Нажмите Save
-
-3. **Ваше приложение будет доступно по адресу:**
-   ```
-   https://yourusername.github.io/MarkMirror/
-   ```
-
-### Деплой на Netlify
-
-1. **Подключите репозиторий к Netlify:**
-
-   - Зайдите на [netlify.com](https://netlify.com)
-   - Нажмите "New site from Git"
-   - Выберите ваш репозиторий
-
-2. **Настройки сборки:**
-
-   - Build command: (оставьте пустым)
-   - Publish directory: `/` (корневая папка)
-
-3. **Деплой произойдет автоматически**
-
-## 🎮 Использование
-
-### Горячие клавиши
-
-- `Ctrl/Cmd + S` - Сохранить содержимое
-- `Ctrl/Cmd + O` - Импортировать файл
-- `Ctrl/Cmd + E` - Экспорт в Markdown
-- `Ctrl/Cmd + Shift + E` - Экспорт в HTML
-- `F1` - Открыть справку
-- `Esc` - Закрыть модальные окна
-
-### Мобильное использование
-
-- Используйте вкладки "Редактор" и "Превью" для переключения
-- Все функции доступны через меню настроек
-- Поддержка touch-жестов для прокрутки
-
-### Синхронная прокрутка
-
-1. Откройте настройки (⚙️)
-2. Включите "Синхронная прокрутка"
-3. Прокрутка в одной панели будет синхронизироваться с другой
-
-## 🧪 Тестирование
-
-Приложение включает встроенную систему тестирования:
-
-1. **Откройте тесты:**
-
-   ```
-   tests/index.html
-   ```
-
-2. **Запустите unit-тесты парсера:**
-
-   - Нажмите "Запустить тесты парсера"
-   - Результаты отобразятся в консоли
-
-3. **Протестируйте парсер в реальном времени:**
-   - Нажмите "Демо парсера"
-   - Введите Markdown текст для тестирования
-
-## 🏗️ Архитектура
-
-### Структура проекта
-
-```
-MarkMirror/
-├── index.html              # Главная страница
-├── src/
-│   ├── script.js           # Основное приложение
-│   ├── style.css           # Стили
-│   ├── ui/
-│   │   ├── editor.js       # CodeMirror 6 редактор
-│   │   ├── simpleEditor.js # Простой fallback редактор
-│   │   └── preview.js      # Панель превью
-│   └── utils/
-│       ├── markdownParser.js # Собственный Markdown парсер
-│       ├── storage.js      # Работа с localStorage
-│       └── fileHandler.js  # Импорт/экспорт файлов
-├── tests/
-│   ├── index.html          # Страница тестов
-│   └── markdownParser.test.js # Unit-тесты парсера
-└── README.md
-```
-
-### Модули
-
-#### `MarkMirrorApp` (script.js)
-
-Основной класс приложения, координирующий работу всех компонентов.
-
-#### `MarkdownEditor` (ui/editor.js)
-
-Интеграция с CodeMirror 6 для продвинутого редактирования.
-
-#### `SimpleEditor` (ui/simpleEditor.js)
-
-Простой textarea-based редактор как fallback.
-
-#### `PreviewPanel` (ui/preview.js)
-
-Управление панелью превью с синхронизацией прокрутки.
-
-#### `MarkdownParser` (utils/markdownParser.js)
-
-Собственный парсер Markdown с поддержкой расширений.
-
-#### `Storage` (utils/storage.js)
-
-Работа с localStorage для сохранения контента и настроек.
-
-#### `FileHandler` (utils/fileHandler.js)
-
-Импорт и экспорт файлов .md и .html.
-
-## 🔧 Настройка и кастомизация
-
-### CSS переменные
-
-Приложение использует CSS переменные для легкой кастомизации:
-
-```css
-:root {
-  --bg-primary: #ffffff;
-  --text-primary: #212529;
-  --accent-color: #007bff;
-  /* ... другие переменные */
-}
-```
-
-### Добавление новых тем
-
-1. Создайте новый селектор с атрибутом `data-theme`
-2. Переопределите CSS переменные
-3. Добавьте логику переключения в `script.js`
-
-### Расширение парсера
-
-Собственный парсер легко расширяется:
-
-```javascript
-// В markdownParser.js
-processBlockElement(lines, startIndex) {
-    // Добавьте новые блочные элементы
-}
-
-processInlineElements(text) {
-    // Добавьте новые inline элементы
-}
-```
-
-## 🤝 Вклад в проект
-
-1. **Форкните репозиторий**
-2. **Создайте ветку для новой функции:**
-   ```bash
-   git checkout -b feature/amazing-feature
-   ```
-3. **Внесите изменения и добавьте тесты**
-4. **Зафиксируйте изменения:**
-   ```bash
-   git commit -m 'Add amazing feature'
-   ```
-5. **Отправьте в ветку:**
-   ```bash
-   git push origin feature/amazing-feature
-   ```
-6. **Создайте Pull Request**
-
-## 📝 Лицензия
-
-Этот проект распространяется под лицензией MIT. См. файл `LICENSE` для подробностей.
-
-## 🙏 Благодарности
-
-- [CodeMirror 6](https://codemirror.net/) - продвинутый редактор кода
-- [Marked.js](https://marked.js.org/) - быстрый Markdown парсер
-- [Highlight.js](https://highlightjs.org/) - подсветка синтаксиса
-- [DOMPurify](https://github.com/cure53/DOMPurify) - санитизация HTML
-
-## 📞 Поддержка
-
-Если у вас есть вопросы или предложения:
-
-- Создайте [Issue](https://github.com/yourusername/MarkMirror/issues)
-- Напишите в [Discussions](https://github.com/yourusername/MarkMirror/discussions)
-
----
-
-**MarkMirror Mobile** - создан с ❤️ для удобного редактирования Markdown
+The repository copyright notice identifies Denis Gutsuliak (`d9911.org`), 2024–2025.
