@@ -1428,14 +1428,14 @@ Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed 
 
     if (helpToggle && helpModal) {
       helpToggle.addEventListener('click', () => {
-        helpModal.classList.remove('hidden');
+        helpModal.showModal();
         this.loadHelpContent(helpContent);
       });
     }
 
     if (closeHelp && helpModal) {
       closeHelp.addEventListener('click', () => {
-        helpModal.classList.add('hidden');
+        helpModal.close();
       });
     }
 
@@ -1443,7 +1443,7 @@ Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed 
     if (helpModal) {
       helpModal.addEventListener('click', e => {
         if (e.target === helpModal) {
-          helpModal.classList.add('hidden');
+          helpModal.close();
         }
       });
     }
@@ -1643,8 +1643,8 @@ MarkMirror можно установить как обычное приложе�
         const helpModal = document.getElementById('help-modal');
         const settingsPanel = document.getElementById('settings-panel');
 
-        if (helpModal && !helpModal.classList.contains('hidden')) {
-          helpModal.classList.add('hidden');
+        if (helpModal?.open) {
+          helpModal.close();
         } else if (settingsPanel && !settingsPanel.classList.contains('hidden')) {
           settingsPanel.classList.add('hidden');
         }

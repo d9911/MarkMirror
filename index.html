@@ -20,9 +20,6 @@
 
     <!-- Apple Touch Icons -->
 
-    <!-- Standard Favicons -->
-    <link rel="shortcut icon" href="src/img/favicon-old.ico" />
-
     <!-- Apple Web App -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="MarkMirror" />
@@ -140,7 +137,7 @@
             <button id="theme-toggle" class="btn btn-icon" title="Переключить тему" aria-label="Переключить тему">🌙</button>
           </div>
         </div>
-        <div class="utility-controls" aria-label="Инструменты редактора">
+        <div class="utility-controls" role="toolbar" aria-label="Инструменты редактора">
           <button id="settings-toggle" class="btn btn-icon" title="Настройки" aria-label="Открыть настройки">⚙️</button>
           <button id="analytics-toggle" class="btn btn-icon" title="Аналитика" aria-label="Открыть аналитику">📊</button>
           <button id="search-toggle" class="btn btn-icon" title="Поиск и замена (Ctrl+F)" aria-label="Открыть поиск и замену">🔍</button>
@@ -149,9 +146,9 @@
       </header>
 
       <!-- Settings Panel -->
-      <div id="settings-panel" class="settings-panel hidden">
+      <section id="settings-panel" class="settings-panel hidden" aria-labelledby="settings-title">
         <div class="settings-content">
-          <h3>Настройки</h3>
+          <h2 id="settings-title">Настройки</h2>
 
           <div class="setting-group">
             <label>
@@ -197,7 +194,7 @@
 
           <div class="setting-group">
             <label for="highlight-color">Цвет подсветки поиска:</label>
-            <input type="color" name="highlightColor" value="#ffeb3b" />
+            <input type="color" id="highlight-color" name="highlightColor" value="#ffeb3b" />
           </div>
 
           <div class="setting-group">
@@ -210,13 +207,13 @@
             <button id="reset-settings" class="btn btn-danger" title="Сбросить все настройки к значениям по умолчанию">🔄 Сбросить настройки</button>
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- Search and Replace Panel -->
-      <div id="search-panel" class="search-panel hidden">
+      <search id="search-panel" class="search-panel hidden" aria-labelledby="search-title">
         <div class="search-content">
           <div class="search-header">
-            <h3>Поиск и замена</h3>
+            <h2 id="search-title">Поиск и замена</h2>
             <button id="search-close" class="btn btn-icon" title="Закрыть">✕</button>
           </div>
 
@@ -269,7 +266,7 @@
             </div>
 
             <!-- Search status -->
-            <div id="search-status" class="search-status hidden"></div>
+            <div id="search-status" class="search-status hidden" role="status" aria-live="polite"></div>
 
             <!-- Keyboard shortcuts help -->
             <div class="search-shortcuts">
@@ -291,7 +288,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </search>
 
       <!-- Main Content Area -->
       <main class="main-content" id="main-content" tabindex="-1">
@@ -302,20 +299,20 @@
         </div>
 
         <!-- Editor Panel -->
-        <div class="editor-panel panel">
+        <section class="editor-panel panel" aria-labelledby="editor-title">
           <div class="panel-header">
-            <h3>Markdown Редактор</h3>
+            <h2 id="editor-title">Markdown Редактор</h2>
             <div class="panel-controls">
               <span id="char-count" class="char-count">0 символов</span>
             </div>
           </div>
           <div id="editor-container" class="editor-container"></div>
-        </div>
+        </section>
 
         <!-- Preview Panel -->
-        <div class="preview-panel panel">
+        <section class="preview-panel panel" aria-labelledby="preview-title">
           <div class="panel-header">
-            <h3>Превью</h3>
+            <h2 id="preview-title">Превью</h2>
             <div class="panel-controls">
               <button id="preview-mode-toggle" class="btn btn-small" title="Переключить режим превью">📱 Мобильный вид</button>
             </div>
@@ -324,29 +321,29 @@
           <!-- Preview Content -->
           <div class="preview-content">
             <!-- Plain Text Preview (Top) -->
-            <div class="preview-section plain-text-preview">
+            <section class="preview-section plain-text-preview">
               <div class="preview-section-header">
-                <h4>📝 Plain Text + Статистика</h4>
+                <h3>📝 Plain Text + Статистика</h3>
               </div>
               <div id="plain-text-output" class="preview-output"></div>
-            </div>
+            </section>
 
             <!-- HTML Preview (Bottom) -->
-            <div class="preview-section html-preview">
+            <section class="preview-section html-preview">
               <div class="preview-section-header">
-                <h4>HTML Рендер</h4>
+                <h3>HTML Рендер</h3>
               </div>
               <div id="html-output" class="preview-output markdown-body"></div>
-            </div>
+            </section>
           </div>
-        </div>
+        </section>
       </main>
 
       <!-- Help Modal -->
-      <div id="help-modal" class="modal hidden">
+      <dialog id="help-modal" class="modal" aria-labelledby="help-title">
         <div class="modal-content">
           <div class="modal-header">
-            <h3>Справка по Markdown</h3>
+            <h2 id="help-title">Справка по Markdown</h2>
             <button id="close-help" class="btn btn-icon" aria-label="Закрыть справку">✕</button>
           </div>
           <div class="modal-body">
@@ -355,7 +352,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </dialog>
 
       <!-- Loading indicator -->
       <div id="loading" class="loading hidden">
@@ -367,6 +364,6 @@
     <!-- Scripts -->
     <script defer src="src/utils/editor-actions.js"></script>
     <script defer src="src/script/language.js"></script>
-    <script defer type="module" src="src/script/index.js"></script>
+    <script type="module" src="src/script/index.js"></script>
   </body>
 </html>

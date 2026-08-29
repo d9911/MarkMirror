@@ -23,14 +23,14 @@
     }
   };
   const selectors = {
-    '.skip-link': 'skip', '#import-btn': 'import', '#clear-btn': 'clear', '#settings-panel h3': 'settings',
-    '.search-header h3': 'search', 'label[for="search-input"]': 'find', 'label[for="replace-input"]': 'replaceWith',
+    '.skip-link': 'skip', '#import-btn': 'import', '#clear-btn': 'clear', '#settings-panel h2': 'settings',
+    '.search-header h2': 'search', 'label[for="search-input"]': 'find', 'label[for="replace-input"]': 'replaceWith',
     '#replace-current': 'replace', '#replace-all': 'replaceAll', '#replace-confirm-mode': 'confirm',
     '#confirm-replace-yes': 'yes', '#confirm-replace-no': 'no', '#confirm-replace-all-remaining': 'all', '#confirm-replace-stop': 'stop',
     '.tab-btn[data-tab="editor"]': 'editor', '.tab-btn[data-tab="preview"]': 'preview',
-    '.editor-panel > .panel-header h3': 'editorTitle', '.preview-panel > .panel-header h3': 'previewTitle',
-    '#preview-mode-toggle': 'mobile', '.plain-text-preview .preview-section-header h4': 'stats',
-    '.html-preview .preview-section-header h4': 'html', '#help-modal .modal-header h3': 'help', '#loading span': 'loading'
+    '.editor-panel > .panel-header h2': 'editorTitle', '.preview-panel > .panel-header h2': 'previewTitle',
+    '#preview-mode-toggle': 'mobile', '.plain-text-preview .preview-section-header h3': 'stats',
+    '.html-preview .preview-section-header h3': 'html', '#help-modal .modal-header h2': 'help', '#loading span': 'loading'
   };
 
   const trigger = document.getElementById('language-trigger');

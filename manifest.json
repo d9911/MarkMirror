@@ -1,19 +1,20 @@
 {
   "name": "MarkMirror",
   "short_name": "MarkMirror",
+  "id": "/",
   "description": "Редактируйте Markdown в двухпанельном интерфейсе с безопасным живым превью и синхронной прокруткой.",
   "version": "2.1.0",
-  "start_url": "./",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#080b12",
   "theme_color": "#080b12",
   "orientation": "any",
-  "scope": "./",
+  "scope": "/",
   "lang": "ru",
   "dir": "ltr",
   "icons": [
-    { "src": "src/img/icon-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "src/img/icon-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+    { "src": "src/img/icon-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "src/img/icon-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
   ],
   "categories": [
     "productivity",
@@ -25,7 +26,7 @@
       "name": "Новый документ",
       "short_name": "Новый",
       "description": "Создать новый Markdown документ",
-      "url": "./?action=new",
+      "url": "/?action=new",
       "icons": [
         {
           "src": "src/img/icon-96x96.png",
@@ -37,7 +38,7 @@
       "name": "Импорт файла",
       "short_name": "Импорт",
       "description": "Импортировать .md файл",
-      "url": "./?action=import",
+      "url": "/?action=import",
       "icons": [
         {
           "src": "src/img/icon-96x96.png",
@@ -49,7 +50,7 @@
       "name": "Аналитика",
       "short_name": "Статистика",
       "description": "Просмотр статистики использования",
-      "url": "./?action=analytics",
+      "url": "/?action=analytics",
       "icons": [
         {
           "src": "src/img/icon-96x96.png",
@@ -58,38 +59,8 @@
       ]
     }
   ],
-  "related_applications": [],
   "prefer_related_applications": false,
   "edge_side_panel": {
     "preferred_width": 400
-  },
-  "file_handlers": [
-    {
-      "action": "./",
-      "accept": {
-        "text/markdown": [
-          ".md",
-          ".markdown"
-        ],
-        "text/plain": [
-          ".txt"
-        ]
-      }
-    }
-  ],
-  "share_target": {
-    "action": "./",
-    "method": "GET",
-    "params": {
-      "title": "title",
-      "text": "text",
-      "url": "url"
-    }
-  },
-  "protocol_handlers": [
-    {
-      "protocol": "web+markdown",
-      "url": "./?markdown=%s"
-    }
-  ]
+  }
 }

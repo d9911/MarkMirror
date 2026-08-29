@@ -341,7 +341,7 @@ body {
   padding: var(--spacing-lg);
 }
 
-.settings-content h3 {
+.settings-content h2 {
   margin-bottom: var(--spacing-md);
   color: var(--text-primary);
 }
@@ -403,7 +403,7 @@ body {
   border-bottom: 1px solid var(--border-color);
 }
 
-.search-header h3 {
+.search-header h2 {
   margin: 0;
   color: var(--text-primary);
   font-size: var(--font-size-lg);
@@ -845,7 +845,7 @@ kbd {
   box-shadow: var(--inset-highlight);
 }
 
-.panel-header h3 {
+.panel-header h2 {
   font-size: var(--font-size-base);
   font-weight: 600;
   color: var(--text-primary);
@@ -961,7 +961,7 @@ kbd {
   align-items: center;
 }
 
-.preview-section-header h4 {
+.preview-section-header h3 {
   font-size: var(--font-size-sm);
   font-weight: 600;
   color: var(--text-secondary);
@@ -1142,18 +1142,21 @@ kbd {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  opacity: 0;
-  visibility: hidden;
+  border: 0;
+  padding: 0;
   transition: all 0.3s ease;
 }
 
-.modal:not(.hidden) {
-  opacity: 1;
-  visibility: visible;
+.modal[open] {
+  display: flex;
+}
+
+.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
@@ -1176,7 +1179,7 @@ kbd {
   border-bottom: 1px solid var(--border-color);
 }
 
-.modal-header h3 {
+.modal-header h2 {
   margin: 0;
   color: var(--text-primary);
 }
